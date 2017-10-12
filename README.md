@@ -1,2 +1,2 @@
-# mars-explorer
-game
+# My resume
+Resume is in sujith.doc
