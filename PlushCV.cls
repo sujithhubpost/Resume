@@ -16,6 +16,11 @@
 \usepackage{pifont}
 \usepackage[document]{ragged2e}
 
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tikzpagenodes}
+\usetikzlibrary{calc}
+
 
 % Publications
 \usepackage{cite}
@@ -29,15 +34,17 @@
 \definecolor{headings}{HTML}{6A6A6A}
 \definecolor{subheadings}{HTML}{333333}
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Main Title Font Definitions
 %Used for Name  and Section Headings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def \pathtitlefont {fonts/sourcesanspro/} 
-\def \firstnamefont {sourcesanspro-SemiBold}
-\def \secondnamefont {sourcesanspro-light}
-\def \titlefont {\firstnamefont}
-\def \namefontsize {9.5}
+% \def \pathtitlefont {fonts/sourcesanspro/} 
+% \def \firstnamefont {sourcesanspro-SemiBold}
+% \def \secondnamefont {sourcesanspro-light}
+% \def \titlefont {\firstnamefont}
+% \def \namefontsize {9.5}
 
 %% Office Code Pro D Title:
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -50,11 +57,11 @@
 
 %% Source Sans Pro Title:
 %%%%%%%%%%%%%%%%%%%%%%%%%
-% \def \pathtitlefont {fonts/sourcesanspro/} 
-% \def \firstnamefont {sourcesanspro-SemiBold}
-% \def \secondnamefont {sourcesanspro-light}
-% \def \titlefont {\firstnamefont}
-% \def \namefontsize {9.5}
+\def \pathtitlefont {fonts/sourcesanspro/} 
+\def \firstnamefont {sourcesanspro-SemiBold}
+\def \secondnamefont {sourcesanspro-light}
+\def \titlefont {\firstnamefont}
+\def \namefontsize {9.5}
 
 %% Source Serif Pro Title:
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,14 +168,14 @@ Last Updated on \today
 
 % Name command
 
-
 \newcommand{\namesection}[4]{
 \RaggedRight{
 \color{title}
 \fontsize{30pt}{30pt}
 \fontspec[Path = \pathtitlefont]{\firstnamefont}\selectfont #1 
 \fontspec[Path = \pathtitlefont]{\secondnamefont}\selectfont #2
-} \\[5pt]
+} \\[1pt]
+
 
 \noindent\makebox[\linewidth]{\color{title}\rule{\paperwidth}{0pt}}
 \vspace{-15pt}
@@ -213,11 +220,11 @@ Last Updated on \today
 %Contact Line
 \newcommand{\contactline}[5]{\begingroup
 \setbox0=\hbox{
-\includegraphics[scale=0.23,trim={1.4cm 1.25cm -0.4cm 0cm}]{icons/main/home.png}{#1}\hspace{0.3cm}
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/githubsquare.png}{#2}\hspace{0.3cm}
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/linkedin.png}{#3}\hspace{0.3cm}
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/mail.png}{#4}\hspace{0.3cm}
-\includegraphics[scale=0.23,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/phone.png}{#5}
+\includegraphics[scale=0.15,trim={1.4cm 1.25cm -0.4cm 0cm}]{icons/main/home.png}{#1}\hspace{0.1cm}
+\includegraphics[scale=0.15,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/githubsquare.png}{#2}\hspace{0.1cm}
+\includegraphics[scale=0.15,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/linkedin.png}{#3}\hspace{0.1cm}
+\includegraphics[scale=0.15,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/mail.png}{#4}\hspace{0.1cm}
+\includegraphics[scale=0.15,trim={0cm 1.25cm -0.4cm 0cm}]{icons/main/phone.png}{#5}
 }\parbox{\wd0}{\box0}\endgroup}
 
 %Inline Centered Logo
@@ -230,4 +237,5 @@ Last Updated on \today
 \newenvironment{tightemize}{
 \vspace{-\topsep}\begin{itemize}[label=\ding{212}]\itemsep1pt \parskip0pt \parsep0pt}
 {\end{itemize}\vspace{-\topsep}}
+
 
